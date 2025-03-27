@@ -17,17 +17,6 @@ const Slide2 = () => {
     { icon: "bi-globe", title: "URL Crawling" }
   ];
 
-  // Development workflow steps
-  const workflowSteps = [
-    { title: "Development Plan", icon: "bi-list-check" },
-    { title: "Environment Setup", icon: "bi-gear" },
-    { title: "Code Generation", icon: "bi-code-square" },
-    { title: "Installation & Run", icon: "bi-terminal" },
-    { title: "Instant Preview", icon: "bi-eye" },
-    { title: "Database Integration", icon: "bi-database" },
-    { title: "Deployment", icon: "bi-cloud-upload" }
-  ];
-
   return (
     <div className="flex flex-col items-center justify-center h-full relative overflow-hidden">
       {/* Dark circuit-like background pattern */}
@@ -42,7 +31,7 @@ const Slide2 = () => {
         </svg>
         
         {/* Glowing lines */}
-        {[...Array(5)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute h-px bg-primary/30"
@@ -69,7 +58,7 @@ const Slide2 = () => {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-2">
             <span className="text-white">AI-Powered</span> <span className="text-primary">Software Engineer</span>
@@ -77,101 +66,13 @@ const Slide2 = () => {
           <p className="text-gray-400 text-lg">Creating full-stack applications with human-like precision</p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Left column */}
-          <div className="space-y-6">
-            {/* Input Methods */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="bg-[#0a0a1a] border border-[#1a1a3a] rounded-2xl p-5 relative overflow-hidden"
-            >
-              {/* Decorative corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-                <div className="absolute transform rotate-45 bg-primary/20 w-28 h-28 -top-14 -right-14"></div>
-              </div>
-              
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-2">
-                  <i className="bi bi-lightning text-primary"></i>
-                </span>
-                Input Methods
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-3">
-                {inputMethods.map((method, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                    className="flex items-center p-2 rounded-lg hover:bg-white/5 transition-colors"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-[#1a1a3a] flex items-center justify-center mr-2">
-                      <i className={`bi ${method.icon} text-primary`}></i>
-                    </div>
-                    <span className="text-sm">{method.title}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            
-            {/* Performance Metrics */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="bg-[#0a0a1a] border border-[#1a1a3a] rounded-2xl p-5 relative overflow-hidden"
-            >
-              {/* Decorative corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-                <div className="absolute transform rotate-45 bg-primary/20 w-28 h-28 -top-14 -right-14"></div>
-              </div>
-              
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-2">
-                  <i className="bi bi-graph-up text-primary"></i>
-                </span>
-                Performance
-              </h3>
-              
-              <div className="space-y-4">
-                {[
-                  { label: "Speed", value: "100x", subtext: "faster than traditional methods" },
-                  { label: "Cost", value: "90%", subtext: "reduction in development costs" },
-                  { label: "Accuracy", value: "94%", subtext: "code generation accuracy" }
-                ].map((metric, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ delay: 0.8 + index * 0.2, duration: 1 }}
-                    className="relative"
-                  >
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm text-gray-400">{metric.label}</span>
-                      <span className="text-sm font-bold text-primary">{metric.value}</span>
-                    </div>
-                    <div className="h-2 bg-[#1a1a3a] rounded-full overflow-hidden">
-                      <motion.div 
-                        className="h-full bg-gradient-to-r from-primary to-secondary"
-                        style={{ width: index === 0 ? "100%" : index === 1 ? "90%" : "94%" }}
-                      ></motion.div>
-                    </div>
-                    <div className="mt-1 text-xs text-gray-500">{metric.subtext}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Right column */}
+        <div className="flex flex-col items-center">
+          {/* Input Methods */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="bg-[#0a0a1a] border border-[#1a1a3a] rounded-2xl p-5 relative overflow-hidden h-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="bg-[#0a0a1a] border border-[#1a1a3a] rounded-2xl p-5 relative overflow-hidden max-w-2xl w-full"
           >
             {/* Decorative corner */}
             <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
@@ -180,46 +81,26 @@ const Slide2 = () => {
             
             <h3 className="text-xl font-semibold mb-4 flex items-center">
               <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-2">
-                <i className="bi bi-code-slash text-primary"></i>
+                <i className="bi bi-lightning text-primary"></i>
               </span>
-              Development Workflow
+              Multiple Input Methods
             </h3>
             
-            <div className="relative pl-6">
-              {/* Vertical line */}
-              <div className="absolute left-2 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary/30"></div>
-              
-              {/* Workflow steps */}
-              <div className="space-y-4">
-                {workflowSteps.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1 + index * 0.15, duration: 0.5 }}
-                    className="relative"
-                  >
-                    {/* Step marker */}
-                    <div className="absolute -left-6 top-1 w-4 h-4 rounded-full bg-[#0a0a1a] border-2 border-primary"></div>
-                    
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-[#1a1a3a] flex items-center justify-center mr-2">
-                        <i className={`bi ${step.icon} text-primary`}></i>
-                      </div>
-                      <span>{step.title}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="mt-6 p-3 bg-[#1a1a3a]/50 rounded-lg border border-[#2a2a4a] text-sm">
-              <div className="flex items-start">
-                <i className="bi bi-shield-check text-green-400 mr-2 mt-0.5"></i>
-                <div>
-                  <span className="font-medium text-green-400">Security & SEO:</span> Automatically implements best practices for security and search engine optimization.
-                </div>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {inputMethods.map((method, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+                  className="flex items-center p-2 rounded-lg hover:bg-white/5 transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-full bg-[#1a1a3a] flex items-center justify-center mr-2">
+                    <i className={`bi ${method.icon} text-primary`}></i>
+                  </div>
+                  <span className="text-sm">{method.title}</span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

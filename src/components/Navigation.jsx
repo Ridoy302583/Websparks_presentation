@@ -17,11 +17,11 @@ const Navigation = ({ currentSlide, totalSlides, nextSlide, prevSlide }) => {
         <i className="bi bi-chevron-left"></i>
       </button>
       
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <div 
             key={index}
-            className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-primary' : 'bg-gray-500'}`}
+            className={`w-1 h-1 rounded-full ${currentSlide === index ? 'bg-primary w-2' : 'bg-gray-500'}`}
           ></div>
         ))}
       </div>
