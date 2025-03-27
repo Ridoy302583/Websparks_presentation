@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--dark);
+  background-color: #000;
   color: white;
   overflow: hidden;
 }
@@ -26,6 +26,7 @@ body {
   width: 100vw;
   position: relative;
   overflow: hidden;
+  background-color: #000;
 }
 
 .slide {
@@ -37,24 +38,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: #000;
   position: relative;
-}
-
-.gradient-bg::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30vh;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
-  z-index: 1;
-  pointer-events: none;
 }
 
 .gradient-bg::after {
@@ -64,13 +54,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 120%, rgba(99, 102, 241, 0.15), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15), transparent 70%);
   z-index: 0;
   pointer-events: none;
 }
 
 .card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(51, 65, 85, 0.4) 100%);
   border-radius: 1rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -80,7 +70,7 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -92,27 +82,13 @@ body {
   display: inline;
 }
 
-.logo-container {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-}
-
 .footer {
   position: absolute;
   bottom: 1rem;
   left: 0;
   width: 100%;
-  text-align: center;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   z-index: 10;
 }
 
@@ -142,9 +118,23 @@ body {
 
 .nav-button:hover {
   background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
 .nav-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media (max-height: 800px) {
+  .slide {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .slide {
+    padding: 0.5rem;
+  }
 }
