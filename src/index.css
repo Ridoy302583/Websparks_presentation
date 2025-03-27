@@ -94,12 +94,15 @@ body {
 
 .navigation {
   position: absolute;
-  bottom: 2rem;
+  bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 1rem;
   z-index: 10;
+  background-color: transparent;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  max-width: 600px;
 }
 
 .nav-button {
