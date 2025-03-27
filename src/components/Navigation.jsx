@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 const Navigation = ({ currentSlide, totalSlides, nextSlide, prevSlide }) => {
   return (
     <motion.div 
-      className="navigation"
+      className="navigation fixed bottom-10 left-0 right-0 mx-auto flex justify-center items-center"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1, duration: 0.5 }}
     >
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center px-8 py-4">
         <div className="flex items-center justify-center w-full gap-2 mb-3">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <div 
