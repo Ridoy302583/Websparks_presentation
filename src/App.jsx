@@ -15,12 +15,16 @@ import Slide12 from './components/Slide12';
 import Slide13 from './components/Slide13';
 import Slide14 from './components/Slide14';
 import Slide15 from './components/Slide15';
+import Slide16 from './components/Slide16';
+import Slide17 from './components/Slide17';
+import Slide18 from './components/Slide18';
+import Slide19 from './components/Slide19';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 15; // 15 slides total
+  const totalSlides = 19; // Updated to 19 slides total
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {
@@ -247,6 +251,58 @@ function App() {
             className="slide"
           >
             <Slide15 />
+          </motion.div>
+        )}
+
+        {currentSlide === 15 && (
+          <motion.div
+            key="slide16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="slide"
+          >
+            <Slide16 />
+          </motion.div>
+        )}
+
+        {currentSlide === 16 && (
+          <motion.div
+            key="slide17"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="slide"
+          >
+            <Slide17 />
+          </motion.div>
+        )}
+
+        {currentSlide === 17 && (
+          <motion.div
+            key="slide18"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="slide"
+          >
+            <Slide18 />
+          </motion.div>
+        )}
+
+        {currentSlide === 18 && (
+          <motion.div
+            key="slide19"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="slide"
+          >
+            <Slide19 />
           </motion.div>
         )}
       </AnimatePresence>
